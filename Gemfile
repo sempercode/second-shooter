@@ -44,3 +44,9 @@ gem 'devise'
 # Foundation 5
 gem 'foundation-rails'
 
+gem 'rails_12factor', group: :production
+
+group :production do
+  gem 'pg'
+end
+
