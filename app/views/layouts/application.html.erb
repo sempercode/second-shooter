@@ -22,16 +22,22 @@
       </ul>
 
       <section class="top-bar-section">
-        <!-- Right Nav Section -->
         <ul class="right">
-          <li><%= link_to("Home", root_path) %></li>
-          <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-          <li><%= link_to("Sign In", new_user_session_path) %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-      <% end %>
-      </ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <% if user_signed_in? %>
+          <!-- <li>Logged in as <%= current_user.email %></li> -->
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign up', new_user_registration_path  %></li>
+          <li><%= link_to 'Login', new_user_session_path  %></li>
+        <% end %>
+        </ul>
     </nav>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
 
     <%= yield %>
 
