@@ -50,6 +50,10 @@ gem 'foundation-rails'
 
 gem 'rails_12factor', group: :production
 
+group :development do
+	gem 'better_errors'
+end
+
 group :production do
   gem 'pg'
 end

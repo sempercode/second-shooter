@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 	root 'pages#index' 
 
 	resources :users
+
+	devise_scope :user do
+		get 'sign_out' => 'users/sessions#destroy'
+	end
 end
