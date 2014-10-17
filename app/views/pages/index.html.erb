@@ -38,7 +38,12 @@
 <div class="featured-photog">
 <div class="row">
 	<div class="small-12 columms text-center">
-		<h2>Future home of featured photograhpers</h2>
+	<h2>Featured Photographer</h2>
+				<% current_user = User.last %>
+		<h2><%= link_to(current_user.first_name, user_path(current_user)) %></h2>
+		<p><%= current_user.website %></p>
+		<p><%= current_user.location %></p>
+		<p><%= number_to_currency(current_user.hourly_rate) %>/hr</p>
 	</div>
 </div>
 </div>
