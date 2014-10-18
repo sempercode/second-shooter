@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require jquery.carouFredSel-6.2.1-packed.js
 //= require_tree .
 
+
+$(function(){ $(document).foundation(); });

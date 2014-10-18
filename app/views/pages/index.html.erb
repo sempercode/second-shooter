@@ -14,7 +14,6 @@
 				<p>We'll get you a second shooter in no time.</p>
 			</div>
 	</div>
-
 </div><!-- slider -->
 
 <div class="features">
@@ -36,21 +35,21 @@
 </div><!-- features -->
 
 <div class="featured-photog">
-<div class="row">
-	<div class="small-12 columms text-center">
-	<h2>Featured Photographer</h2>
-				<% current_user = User.last %>
-		<h2><%= link_to(current_user.first_name, user_path(current_user)) %></h2>
-		<p><%= current_user.website %></p>
-		<p><%= current_user.location %></p>
-		<p><%= number_to_currency(current_user.hourly_rate) %>/hr</p>
-	</div>
-</div>
-</div>
+	<div class="row">
+		<div class="small-12 columms text-center">
+			<h2>Featured Photographer</h2>
+						<% current_user = User.last %>
+				<h2><%= link_to(current_user.first_name, user_path(current_user)) %></h2>
+				<p><%= current_user.website %></p>
+				<p><%= current_user.location %></p>
+				<p><%= number_to_currency(current_user.hourly_rate) %>/hr</p>
+		</div>
+	</div><!-- row -->
+</div><!-- featured photog -->
 
-<%= javascript_include_tag "application" %>
-      <script type="text/javascript">
-        $(document).ready(function() {
-            $('#carousel').carouFredSel();                  
-            });
-      </script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#carousel').carouFredSel();                  
+      });
+</script>

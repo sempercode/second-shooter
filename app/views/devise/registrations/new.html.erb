@@ -1,5 +1,5 @@
 	<div class="row">
-	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	<%= form_for(resource, as: resource_name, html: {class: "form"}, url: registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
 		<div class="medium-12 columns">
 		  <label><%= f.label :email %><br />
@@ -29,21 +29,20 @@
 		  <label><%= f.label :last_name %><br />
 		  <%= f.text_field :last_name %></label>
 		</div>
-	</div><!-- row -->
+	</div>
 
 	<div class="row">
-		<div class="medium-6 columns">
+		<div class="medium-4 columns">
 		  <label><%= f.label :website %><br />
 		  <%= f.text_field :website %></label>
 		</div>
-		<div class="medium-6 columns">
+
+		<div class="medium-4 columns">
 		  <label><%= f.label :location %><br />
 		  <%= f.text_field :location %></label>
 		</div>
-	</div><!-- row -->
 
-	<div class="row">
-		<div class="medium-6 columns">
+		<div class="medium-4 columns">
 		  <label><%= f.label :hourly_rate %><br />
 		  <%= f.text_field :hourly_rate %></label>
 		</div>
