@@ -45,9 +45,6 @@ gem 'spring',        group: :development
 # Devise
 gem 'devise'
 
-# Foundation 5
-gem 'foundation-rails'
-
 gem 'rails_12factor', group: :production
 
 group :development do
@@ -58,3 +55,6 @@ group :production do
   gem 'pg'
 end
 
+gem 'bootstrap-sass'
+
+gem 'autoprefixer-rails'
