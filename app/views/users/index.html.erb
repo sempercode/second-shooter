@@ -1,39 +1,39 @@
 <div class="user_all">
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
 
-			<% @users.each do |user| %>
+				<% @users.each do |user| %>
 
-				<table class="table">
-					<tbody>
-						<tr>
-							<th>Email</th> 
-							<td><%= mail_to(user.email) %> </td>
-						</tr>
-						<tr>
-							<th>Name</th> 
-							<td><%= user.first_name %> </td>
-						</tr>
-						<tr>
-							<th>Website</th> 
-							<td><%= user.website %> </td>
-						</tr>
-						<tr>
-							<th>Location</th> 
-							<td><%= user.location %> </td>
-						</tr>
-						<tr>
-							<th>Hourly Rate</th> 
-							<td><%= user.hourly_rate %> </td>
-						</tr>
-					</tbody>
-				</table>
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Email</th> 
+								<td><%= mail_to(user.email) %> </td>
+							</tr>
+							<tr>
+								<th>Name</th> 
+								<td><%= user.first_name %> </td>
+							</tr>
+							<tr>
+								<th>Website</th> 
+								<td><%= user.website %> </td>
+							</tr>
+							<tr>
+								<th>Location</th> 
+								<td><%= user.location %> </td>
+							</tr>
+							<tr>
+								<th>Hourly Rate</th> 
+								<td><%= user.hourly_rate %> </td>
+							</tr>
+						</tbody>
+					</table>
 
-			<% end %>
+				<% end %>
 
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 
