@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
 	get 'about', to: 'pages#about' 
 
-	get 'contact', to: 'contact#contact'
+	get 'contact', to: 'contact#index'
+
+	post 'send_email', to: 'contact#send_email'
 
 	resources :users
 
