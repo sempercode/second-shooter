@@ -1,11 +1,18 @@
 class ContactController < ApplicationController
-	def send_email
-		ActionMailer::Base.mail(:from => 'from@domain.com', :to => 'bjohnson0311@gmail.com', :subject => "TEST", 
-			:body => 'This is a test.').deliver
-		flash[:notice] = "Message sent"
-		redirect_to root_path
-	end
 
-	def index
-	end
+  def new
+    @message = Message.new
+  end
+
+  def create
+    @message = Message.new(params[:message])
+    
+    if @message.valid?
+      NotificationsMailer.new_message(@message).deliver
+      redirect_to(root_path, :notice => "Message was successfully sent.")
+    else
+      flash.now.alert = "Please fill all fields."
+      render :new
+    end
+  end
 end
