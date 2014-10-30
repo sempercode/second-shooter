@@ -18,7 +18,7 @@
 					</tr>
 					<tr>
 						<th>Hourly Rate</th> 
-						<td><%= @users.hourly_rate %> </td>
+						<td><%= number_to_currency(@users.hourly_rate) %> </td>
 					</tr>
 				</tbody>
 			</table>
