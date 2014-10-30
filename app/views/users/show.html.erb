@@ -21,10 +21,13 @@
 						<td><%= @users.hourly_rate %> </td>
 					</tr>
 				</tbody>
-			</table>	
-			<% if user_signed_in? %>
-			<%= link_to "Edit / Cancel Account Information", edit_user_registration_path(@users) %>
-			<% end %>
+			</table>
+				
+			<% if can? :update, @users %>
+  			<%= link_to "Edit", edit_user_registration_path(@users) %>
+	    <% end %>
+
+			
 		</div>
 	</div>
 </div>

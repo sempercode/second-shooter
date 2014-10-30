@@ -61,3 +61,5 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'simple_form'
+
+gem 'cancancan', '~> 1.9'
