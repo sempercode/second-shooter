@@ -65,3 +65,5 @@ gem 'simple_form'
 gem 'cancancan', '~> 1.9'
 
 gem 'rails_admin'
+
+gem 'rollbar', '~> 1.2.4'
