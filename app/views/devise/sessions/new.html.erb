@@ -1,27 +1,29 @@
 <div class="conatiner">
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="row">
+		<div class="col-md-3 col-md-push-4 col-sm-3 col-sm-push-4">
 
-		<h3>Log in</h3>
+			<h4 class="text-center">Log in with your email account</h4>
+			<br />
+				<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				 
+				 <%= f.email_field :email, autofocus: true %>
 
-
-			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-			  <label><%= f.label :email %><br />
-			  <%= f.email_field :email, autofocus: true %></label>
-
-			  <label><%= f.label :password %><br />
-			    <%= f.password_field :password, autocomplete: "off" %></label>
+				 <%= f.password_field :password, autocomplete: "off", :autofocus => 'true' %>
 
 			  <% if devise_mapping.rememberable? -%>
-			    <label><%= f.check_box :remember_me %> <%= f.label :remember_me %></label>
-			  <% end -%>
+			   <%= f.check_box :remember_me, :autofocus => 'true' %> 
+			  <% end %>
 
-			  <div><%= f.submit "Log in" %></div>
-			<% end %>
+				  <%= f.submit "Log in", :class => 'btn btn-primary' %>
+				<% end %>
+				
+				<br />
 
-			<%= render "devise/shared/links" %>
+				<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+	  			<%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-primary" %>
+				<% end -%>
 
-	</div><!-- small-6 small-centered -->
-</div><!-- row -->
-</div>
+		</div><!-- small-6 small-centered -->
+	</div><!-- row -->
+</div><!-- container -->
 

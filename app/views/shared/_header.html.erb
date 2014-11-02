@@ -45,16 +45,4 @@
     </div><!-- container-fluid -->
   </nav>
 
-<div class="containter">
-  <div class="row">
-    <div class="col-md-3 col-md-push-5">
-    <% flash.each do |key, value| %>
-      <% if key == 'alert' %>    
-        <div class="alert alert-danger"><%=value%></div>
-      <% elsif key == 'notice' %>    
-        <div class="alert alert-success"><%=value%></div>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-</div>
+

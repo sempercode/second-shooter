@@ -1,68 +1,38 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
 
-<div class="sign_up">
-<div class="container">	
+
+<div class="container">
+
+<div class="col-md-6 col-md-offset-3">	
 
 <h2>Sign Up</h2>
+<%= bootstrap_form_for @user, :html => { :class => "form-vertical" } do |f| %>
 
-	<div class="row">
-		<div class="col-md-3">
-		  <label><%= f.label :email %><br />
-		  <%= f.email_field :email, autofocus: true %></label>
-		</div>
+	<%= f.email_field :email, autofocus: true, :autofocus => 'true' %>
 
-		<div class="col-md-3">
-		  <label><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-		    <%= f.password_field :password, autocomplete: "off" %></label>
-		</div>
+  <%= f.password_field :password, autocomplete: "off", :autofocus => 'true' %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i> <% end %>
 
-		<div class="col-md-3">
-		  <label><%= f.label :password_confirmation %><br />
-		    <%= f.password_field :password_confirmation, autocomplete: "off" %></label>
-		</div>
+  <%= f.password_field :password_confirmation, autocomplete: "off", :autofocus => 'true' %>
 
-	</div>
+	<%= f.text_field :first_name, :autofocus => 'true' %>
 
-	<div class="row">
-		<div class="col-md-3">
-			<label><%= f.label :first_name %><br />
-			<%= f.text_field :first_name %></label>
-		</div>
+	<%= f.text_field :last_name, :autofocus => 'true' %>
 
-		<div class="col-md-3">
-		  <label><%= f.label :last_name %><br />
-		  <%= f.text_field :last_name %></label>
-		</div>
+	<%= f.text_field :website, :autofocus => 'true' %>
 
-		<div class="col-md-3">
-		  <label><%= f.label :website %><br />
-		  <%= f.text_field :website %></label>
-		</div>
+	<%= f.text_field :location, :autofocus => 'true' %>
 
-	</div>
+	<%= f.text_field :hourly_rate, :autofocus => 'true' %>
 
-	<div class="row">
-		<div class="col-md-3">
-		  <label><%= f.label :location %><br />
-		  <%= f.text_field :location %></label>
-		</div>
+	<%= f.submit "Sign up", :class => "col-md-3  btn btn-primary" %>
+	<% end %>
+<% end %>
 
-		<div class="col-md-3">
-		  <label><%= f.label :hourly_rate %><br />
-		  <%= f.text_field :hourly_rate %></label>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-3 col-md-offset-4">
-			<%= f.submit "Sign up", :class => "button small" %>
-			<% end %>
-			<%= render "devise/shared/links" %>
-		</div>
-	</div>
+<%= render "devise/shared/links" %>
 
 </div>
 </div>
+
 
 
