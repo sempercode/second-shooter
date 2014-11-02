@@ -1,10 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
-	def sign_up(resource_name, resource)
-	 if resource_name.constantize.count == 1
-	    resource.update_attribute(:is_admin, true)
-	 end
-   super
+	def create
+		super do |user|
+			if User.count == 1
+				user.update_attribute(:is_admin, true)
+			end
+		end
 	end
-
 end

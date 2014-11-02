@@ -23,8 +23,10 @@
 				</tbody>
 			</table>
 
+			<%= link_to 'Back to All Profiles', users_path %>
+
 			<% if can? :update, @users %>
-  			<%= link_to "Edit", edit_user_registration_path(@users) %>
+  			<%= link_to "| Edit", edit_user_registration_path(@users) %>
 	    <% end %>
 
 			
