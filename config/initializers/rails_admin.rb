@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["Second Shooter"]
   ### Popular gems integration
 
   ## == Devise ==

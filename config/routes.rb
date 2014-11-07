@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 	get 'contact', to: 'contact#new'
 	post 'contact', to: 'contact#create'
 
+	resources :posts
+
+
 	resources :users
 
-	resources :blog
 
 end
