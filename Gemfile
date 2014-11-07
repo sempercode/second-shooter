@@ -69,3 +69,5 @@ gem 'rails_admin'
 # gem 'rollbar', '~> 1.2.4'
 
 gem 'bootstrap_form'
+
+

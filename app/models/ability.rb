@@ -6,6 +6,7 @@ class Ability
     if user.is_admin
       can :access, :rails_admin
       can :dashboard
+      can :manage, :post
       end
     end
 end
