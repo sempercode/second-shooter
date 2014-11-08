@@ -2,12 +2,12 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 
-			<h1 class="text-center">The Blog</h1>
+			<h1>The Blog</h1>
 
 			<%= @post.each do |post| %>
 
 			<h2><%= link_to(post.title, post_path(post)) %></h2>
-			<strong><%= post.created_at.strftime("%b %d %Y") %></strong>
+			<strong><%= post.created_at.strftime("%b %d %Y | %l:%M %P") %></strong>
 
 			<p><%= truncate(post.content, :length => 200) %></p>
 
