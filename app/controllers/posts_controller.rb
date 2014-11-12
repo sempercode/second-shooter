@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	def index
-		@post = Post.all
+		@posts = Post.paginate(:page => params[:page])
 	end
 
 	def show
@@ -12,19 +12,25 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
-		@post.save
-		redirect_to posts_path
+			@post = Post.new(post_params)
+		if @post.save
+			redirect_to posts_path
+		else
+			render 'new'
 	end
+end
 
 	def edit
 		@post = Post.find(params[:id])
 	end
 
-		def update
+	def update
 		@post = Post.find(params[:id])
-		@post.update(post_params)
+	if @post.update(post_params)
 		redirect_to @post
+	else
+		render 'new'
+	end
 	end
 
 	def destroy

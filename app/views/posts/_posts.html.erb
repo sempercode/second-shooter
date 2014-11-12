@@ -4,7 +4,7 @@
 
 			<h1>The Blog</h1>
 
-			<% @post.each do |post| %>
+			<% @posts.each do |post| %>
 
 			<h2><%= link_to(post.title, post_path(post)) %></h2>
 			<strong><%= post.created_at.strftime("%b %d %Y | %l:%M %P") %></strong>
@@ -17,7 +17,13 @@
 	</div><!-- row -->
 	<div class="row">
 		<div class="col-md-2 col-md-offset-5">
-			<%= link_to 'New Post', new_post_path %>
-			</div><!-- col -->
+
+			  <%= link_to 'New Post', new_post_path %>
+
+				<%= will_paginate @posts %>
+
+
+
+		</div><!-- col -->
 	</div><!-- row -->
 </div><!-- container -->

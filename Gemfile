@@ -70,4 +70,6 @@ gem 'rails_admin'
 
 gem 'bootstrap_form'
 
+gem 'will_paginate', '~> 3.0'
+
 
