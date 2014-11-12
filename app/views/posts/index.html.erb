@@ -4,7 +4,7 @@
 
 			<h1>The Blog</h1>
 
-			<%= @post.each do |post| %>
+			<% @post.each do |post| %>
 
 			<h2><%= link_to(post.title, post_path(post)) %></h2>
 			<strong><%= post.created_at.strftime("%b %d %Y | %l:%M %P") %></strong>
