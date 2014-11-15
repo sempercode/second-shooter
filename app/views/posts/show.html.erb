@@ -8,8 +8,48 @@
 
   		<%= link_to 'Back to all posts', posts_path %> | 
   		<%= link_to "Edit", edit_post_path(@post) %>
+		</div><!-- col-md-6 -->
+	</div><!-- row -->
+</div><!-- container -->
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+  		<h4>Add a comment:</h4>
+				<%= bootstrap_form_for([@post, @post.comments.build]	) do |f| %>
+				  <p>
+				    <%= f.text_field :commenter %>
+				  </p>
+				  <p>
+				    <%= f.text_area :body %>
+				  </p>
+				  <p>
+				    <%= f.submit 'Submit', :class => 'btn btn-primary'  %>
+				  </p>
+				<% end %>
+		</div><!-- col-md-6 -->
+	</div><!-- row -->
+</div><!-- container -->
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h3>Comments</h3>
+				<% @post.comments.each do |comment| %>
+				  <p>
+				    <strong>User:</strong>
+				    <%= comment.commenter %>
+				  </p>
+				 
+				  <p>
+				    <strong>Comment:</strong>
+				    <%= comment.body %>
+				  </p>
+
+				  <%= link_to 'Delete Comment', [comment.post, comment],
+				               method: :delete,
+				               data: { confirm: 'Are you sure?' } %>
+			<% end %>
 		</div><!-- col-md-6 -->
 	</div><!-- row -->
 </div><!-- container -->
