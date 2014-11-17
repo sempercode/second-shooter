@@ -3,11 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
-# Use sqlite3 as the database for Active Record
-
-group :development do
-	gem 'sqlite3'
-end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -27,9 +22,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,15 +37,11 @@ gem 'spring',        group: :development
 # Devise
 gem 'devise'
 
-gem 'rails_12factor', group: :production
-
 group :development do
 	gem 'better_errors'
-	gem "binding_of_caller"
-end
-
-group :production do
-  gem 'pg'
+	gem 'binding_of_caller'
+	gem 'spring'
+	gem 'sqlite3'
 end
 
 group :test, :development do
@@ -64,6 +52,10 @@ group :test do
 	gem 'capybara', '~> 2.3.0'
 end
 
+group :production do
+	gem 'rails_12factor'
+  gem 'pg'
+end
 
 gem 'bootstrap-sass'
 
@@ -80,5 +72,7 @@ gem 'rails_admin'
 gem 'bootstrap_form'
 
 gem 'will_paginate', '~> 3.0'
+
+
 
 
